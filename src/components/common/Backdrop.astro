@@ -1,0 +1,119 @@
+---
+import noise from '../../assets/images/noise.webp';
+import { getImage } from '@astrojs/image';
+
+const imageNoise = (
+  await getImage({
+    src: noise,
+    alt: 'noise',
+  })
+).src;
+---
+
+<div class="fixed z-1 noise-background">
+  <style define:vars={{ imageNoise: `url(${imageNoise})` }}>
+    .noise-background::before {
+      position: fixed;
+      content: '';
+      z-index: -1;
+      top: 0%;
+      left: 0;
+      width: 150%;
+      height: 100%;
+      background: var(--imageNoise) repeat;
+      background-blend-mode: overlay;
+      opacity: 0.1;
+    }
+  </style>
+  <svg
+    class="fixed"
+    width="877"
+    height="1204"
+    viewBox="0 0 877 1204"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{
+      top: '-70%',
+      right: '-10%',
+    }}
+  >
+    <g opacity="0.5" filter="url(#filter0_f_526_109)">
+      <path
+        d="M669.704 772.246C652.141 845.702 618.664 902.59 577.452 946.232C422.678 1110.13 114.704 976.007 198.127 766.582C266.019 596.143 509.821 307.178 623.235 184C663.036 278.403 728.05 528.217 669.704 772.246Z"
+        fill="url(#paint0_linear_526_109)"></path>
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_526_109"
+        x="0.0454102"
+        y="-0.000244141"
+        width="876.924"
+        height="1203.38"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+        <feGaussianBlur stdDeviation="92" result="effect1_foregroundBlur_526_109"></feGaussianBlur>
+      </filter>
+      <linearGradient
+        id="paint0_linear_526_109"
+        x1="-38.7367"
+        y1="1084.38"
+        x2="732.066"
+        y2="569.355"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#8BC3B4"></stop>
+        <stop offset="0.0001" stop-color="#8C8BC3"></stop>
+        <stop offset="1" stop-color="#8BC3B4" stop-opacity="0"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <svg
+    class="fixed"
+    width="1085"
+    height="1026"
+    viewBox="0 0 1085 1026"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{
+      bottom: '20%',
+      left: '-10%',
+      transform: 'translate(-10%, 20%)',
+    }}
+  >
+    <g opacity="0.5" filter="url(#filter0_f_526_108)">
+      <path
+        d="M335.389 670.454C273.363 627.362 232.56 575.476 206.91 521.207C110.579 317.397 347.592 79.3586 512.294 233.28C646.335 358.547 826.752 690.797 900.205 841.263C797.791 843.976 541.447 813.612 335.389 670.454Z"
+        fill="url(#paint0_linear_526_108)"></path>
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_526_108"
+        x="0.610352"
+        y="0.0551758"
+        width="1083.59"
+        height="1025.37"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+        <feGaussianBlur stdDeviation="92" result="effect1_foregroundBlur_526_108"></feGaussianBlur>
+      </filter>
+      <linearGradient
+        id="paint0_linear_526_108"
+        x1="302.5"
+        y1="-103"
+        x2="501.669"
+        y2="802.382"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#8BC3B4"></stop>
+        <stop offset="1" stop-color="#8BC3B4" stop-opacity="0"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>

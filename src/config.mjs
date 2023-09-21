@@ -1,15 +1,16 @@
 import defaultImage from './assets/images/default.png';
 
-const CONFIG = {
-  name: 'AstroWind',
+const env = import.meta.env;
 
-  origin: 'https://astrowind.vercel.app',
+const CONFIG = {
+  name: 'artem stelzer',
+
+  origin: 'https://stelzer.dev',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
-  description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+  title: 'artem stelzer',
+  description: 'Artem Stelzer, FullStack developer',
   defaultImage: defaultImage,
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
@@ -24,36 +25,11 @@ const CONFIG = {
     timeZone: 'UTC',
   }),
 
-  googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  googleAnalyticsId: env.GOOGLE_ANALYTICS_ID || false, // "G-XXXXXXXXXX",
+  googleSiteVerificationId: env.GOOGLE_SITE_VERIFICAION_ID || false,
 
   blog: {
     disabled: false,
-    postsPerPage: 4,
-
-    post: {
-      permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      noindex: false,
-      disabled: false,
-    },
-
-    list: {
-      pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
-      noindex: false,
-      disabled: false,
-    },
-
-    category: {
-      pathname: 'category', // Category main path /category/some-category
-      noindex: true,
-      disabled: false,
-    },
-
-    tag: {
-      pathname: 'tag', // Tag main path /tag/some-tag
-      noindex: true,
-      disabled: false,
-    },
   },
 };
 

@@ -1,0 +1,27 @@
+---
+export interface Props {
+  jobName: string;
+  period: string;
+}
+
+const { jobName, period } = Astro.props;
+---
+
+<li class="pl-4 border-l border-[#A9B5B2] pb-[28px] last:border-l-0">
+  <div class="mt-[-10px]">
+    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-[#A9B5B2]"></div>
+    <div class="flex flex-col justify-start items-start gap-2.5">
+      <div class="flex justify-start items-center gap-2.5">
+        <p class="flex-grow-0 flex-shrink-0 text-[16px] font-semibold text-left text-white">{jobName}</p>
+        <div
+          class="flex justify-center items-center flex-grow-0 flex-shrink-0 relative px-[3px] py-[1px] rounded-[3px] border border-[#A9B5B2]"
+        >
+          <p class="flex-grow-0 flex-shrink-0 text-[10px] font-bold text-left uppercase text-white">{period}</p>
+        </div>
+      </div>
+      <p class="text-left text-[#A7AFB4] text-[14px]">
+        <slot />
+      </p>
+    </div>
+  </div>
+</li>
